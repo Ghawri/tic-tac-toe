@@ -1,18 +1,20 @@
 const {createServer} = require('http');
 const {Server} = require('socket.io');
-// const express = require('express')
+const express = require('express')
 const path = require('path')
 const BASE_URL = process.env.BASE_URL
 const PORT = process.env.PORT || 3000
 
 
-// const app= express();
+const app= express();
 const httpServer = createServer();
 const io = new Server(httpServer, { 
     cors:`${BASE_URL}`
 });
 
-
+app.get('/',(req,res)=>{
+        res.send(" running")
+    })
 
 //----------------deployement-------------------
 
@@ -24,9 +26,7 @@ const io = new Server(httpServer, {
 //         res.sendFile(path.resolve(__dirname1,'tic-tac-toe-online','build','index.html'))
 //     })
 // }else{
-//     app.get('/',(req,res)=>{
-//         res.send(" running")
-//     })
+//     
 // }
 
 
