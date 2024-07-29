@@ -3,6 +3,7 @@ const {Server} = require('socket.io');
 // const express = require('express')
 const path = require('path')
 const BASE_URL = process.env.BASE_URL
+const PORT = process.env.PORT || 3000
 
 
 // const app= express();
@@ -110,4 +111,4 @@ socket.on('disconnect',function(){
 })
 });
 
-httpServer.listen(3000);
+httpServer.listen(PORT);
